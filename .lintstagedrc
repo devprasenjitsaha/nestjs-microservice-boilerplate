@@ -1,0 +1,4 @@
+{
+    "*.{ts,json,yaml}": ["npm run format", "npm run lint --fix"],
+    "!*.{md,yaml,json}": ["npm run lint --fix"]
+}

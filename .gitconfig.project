@@ -1,0 +1,44 @@
+[core]
+    autocrlf = input              # Keep consistent line endings (LF)
+    fileMode = true               # Respect file permission changes
+    ignorecase = false            # Case-sensitive filenames
+    editor = code --wait          # Use VS Code for merges/commits
+
+[color]
+    ui = auto                     # Enable colorized output
+
+[alias]
+    st = status -sb               # Short, clean status
+    lg = log --oneline --decorate --graph --all
+    co = checkout
+    br = branch
+    cm = commit -m
+    amend = commit --amend --no-edit
+    unstage = reset HEAD --
+    df = diff
+
+[branch]
+    autosetuprebase = always       # Encourage rebase over merge for cleaner history
+
+[pull]
+    rebase = true                 # Always rebase when pulling
+
+[push]
+    default = current             # Push current branch by default
+    autoSetupRemote = true        # Automatically set upstream when branch is first pushed
+
+[merge]
+    tool = code
+[mergetool "code"]
+    cmd = code --wait $MERGED
+
+[diff]
+    tool = code
+[difftool "code"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[commit]
+    gpgsign = false               # Keep disabled unless org enforces signed commits
+
+[init]
+    defaultBranch = main          # Ensure all new branches use `main`
